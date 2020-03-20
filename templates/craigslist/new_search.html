@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+<!--  -->
+{% block content %}
+<h2 style="text-align: center">{{search}}</h2>
+<hr />
+<div class="container">
+  <div class="row">
+    {% for post in final_postings %}
+    <div class="col-md-4">
+      <img
+        src="{{ post.3 }}"
+        alt="..."
+        style="max-width:480px; max-height:480px;"
+      />
+      <p>{{post.0}}</p>
+      <p>
+        <a
+          class="btn btn-primary"
+          href="{{post.1}}"
+          role="button"
+          target="_blank"
+          >View details &raquo;</a
+        >
+      </p>
+    </div>
+    <hr />
+    <br />
+    {% endfor %}
+  </div>
+</div>
+<br />
+{% endblock content %}

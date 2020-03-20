@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "head.html" %}
+
+  <body>
+    {% include "nav.html"%}
+
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Craigslist Scapper</h1>
+          <p>
+            This app has webscrap craigslist for easy nav.
+          </p>
+          <p>
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://cosprings.craigslist.org/"
+              role="button"
+              >Original Page &raquo;</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <!-- line 38 {{url craig:category}} -->
+        <div class="row">
+          {% for link in links %}
+          <div class="col-md-4">
+            <h2>{{link.1}}</h2>
+            <p></p>
+            <p>
+              <a
+                class="btn btn-primary"
+                href="{{link.0}}"
+                role="button"
+                target="_blank"
+                >View details &raquo;</a
+              >
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <hr />
+        {% block content %} {% endblock content %}
+      </div>
+      <!-- /container -->
+    </main>
+
+    {% include "footer.html" %}
+    <!--  -->
+    {% include "scripts.html" %}
+  </body>
+</html>

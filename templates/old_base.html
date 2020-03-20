@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include "head.html" %}
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">Home</a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        {% for link in links %}
+
+        <ul>
+          <a href="{{link.0}}" target="_blank"><li>{{link.1}}</li></a>
+        </ul>
+        {% endfor %}
+      </div>
+      {% block content %} {% endblock content %}
+    </div>
+
+    {% include "scripts.html" %}
+  </body>
+</html>
